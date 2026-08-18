@@ -45,7 +45,6 @@ const WA_CORPORATE = `${WA}?text=${encodeURIComponent(
 )}`;
 const TEL1 = "tel:+2349063217044";
 
-
 const IMG = {
   fumigation: "/images/abm-fumigation-equipment.jpg",
   indoor: "/images/abm-indoor-treatment.jpg",
