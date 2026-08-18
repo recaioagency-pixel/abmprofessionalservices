@@ -81,7 +81,7 @@ export const Route = createFileRoute("/")({
           "@type": "LocalBusiness",
           name: "ABM Cleaning & Fumigation Services",
           description: DESC,
-          telephone: ["+2349063217044", "+2349055930169"],
+          telephone: "+2349063217044",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Maitama, Abuja",
