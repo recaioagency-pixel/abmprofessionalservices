@@ -44,7 +44,6 @@ const WA_CORPORATE = `${WA}?text=${encodeURIComponent(
   "Hello ABM Cleaning & Fumigation Services, I would like to request a corporate cleaning quotation.",
 )}`;
 const TEL1 = "tel:+2349063217044";
-const TEL2 = "tel:+2349055930169";
 
 const IMG = {
   fumigation: "/images/abm-fumigation-equipment.jpg",
@@ -81,7 +80,7 @@ export const Route = createFileRoute("/")({
           "@type": "LocalBusiness",
           name: "ABM Cleaning & Fumigation Services",
           description: DESC,
-          telephone: ["+2349063217044", "+2349055930169"],
+          telephone: "+2349063217044",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Maitama, Abuja",
@@ -162,14 +161,14 @@ const TESTIMONIALS = [
 ];
 
 const FAQS = [
-  ["How much does deep cleaning cost?", "Pricing depends on the property, size and scope of work. Contact ABM for a free quotation."],
-  ["Do you provide upholstery cleaning?", "Yes. ABM provides upholstery cleaning services."],
-  ["Do you clean offices?", "Yes. ABM provides cleaning services for offices and other commercial facilities."],
-  ["Do you provide post-construction cleaning?", "Yes. ABM provides post-construction cleaning services."],
-  ["Do you provide fumigation?", "Yes. ABM provides spray fumigation, fogging fumigation and pest-control services."],
-  ["What pests do you treat?", "ABM provides pest-control services for common pests including cockroaches, mosquitoes, rodents and termites."],
-  ["Can you fumigate offices and commercial facilities?", "Yes. ABM provides fumigation and pest-control services for residential and commercial properties."],
-  ["How do I get a quotation?", "Contact ABM directly through WhatsApp or phone to discuss your requirements and request a quotation."],
+  ["How much does deep cleaning cost?", "Our deep cleaning prices depend on the size and condition of the property, the areas requiring attention, and the scope of work. We can arrange a site inspection or request details from you on WhatsApp before providing a quotation."],
+  ["Do you provide upholstery cleaning?", "Yes. We provide professional upholstery cleaning to help remove dirt, stains, dust, and accumulated grime from sofas, chairs, and other upholstered furniture. The cleaning method depends on the type and condition of the upholstery."],
+  ["Do you clean offices?", "Yes. We provide professional office cleaning services for businesses and workplaces. Our services can be arranged as one-time deep cleaning or scheduled cleaning depending on your needs."],
+  ["Do you provide post-construction cleaning?", "Yes. We provide post-construction cleaning to help prepare newly constructed or renovated properties for use. This includes removing construction dust, debris, dirt, and other leftover materials from the cleaning process."],
+  ["Do you provide fumigation?", "Yes. We provide professional fumigation and pest-control services for residential and commercial properties. We assess the property and recommend the appropriate treatment based on the pest problem."],
+  ["What pests do you treat?", "We treat common household and commercial pests, including cockroaches, ants, mosquitoes, bed bugs, termites, rodents, and other pest infestations. The appropriate treatment depends on the type and severity of the infestation."],
+  ["Can you fumigate offices?", "Yes. We provide fumigation and pest-control services for offices and other commercial spaces. We can arrange treatment based on the size of the office, the type of pest problem, and the preferred treatment schedule."],
+  ["How do I get a quotation?", "You can contact ABM Cleaning & Fumigation Services through 09063217044 or WhatsApp. Provide details about the property, the type of cleaning or fumigation service required, and your location. We can then provide further information and arrange an inspection where necessary."],
 ];
 
 function Wordmark({ compact = false }: { compact?: boolean }) {
@@ -644,6 +643,17 @@ function Index() {
                 </AccordionItem>
               ))}
             </Accordion>
+            {/* Hidden FAQ schema for SEO: content is always in the DOM but visually hidden */}
+            <div className="hidden" aria-hidden="true" itemScope itemType="https://schema.org/FAQPage">
+              {FAQS.map(([q, a]) => (
+                <div key={q} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                  <h3 itemProp="name">{q}</h3>
+                  <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                    <p itemProp="text">{a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -681,7 +691,6 @@ function Index() {
               </div>
               <div className="grid gap-1">
                 <a href={TEL1} className="font-semibold hover:underline">0906 321 7044</a>
-                <a href={TEL2} className="opacity-75 hover:underline">0905 593 0169</a>
               </div>
             </div>
           </div>
@@ -700,8 +709,6 @@ function Index() {
             <p className="text-sm text-muted-foreground">Maitama, Abuja, Nigeria</p>
             <p className="mt-2 text-sm">
               <a href={TEL1} className="font-semibold text-foreground hover:text-primary">0906 321 7044</a>
-              <span className="text-muted-foreground"> · </span>
-              <a href={TEL2} className="text-muted-foreground hover:text-primary">0905 593 0169</a>
             </p>
           </div>
           <div>
