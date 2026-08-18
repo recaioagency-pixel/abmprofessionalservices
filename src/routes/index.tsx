@@ -681,7 +681,6 @@ function Index() {
               </div>
               <div className="grid gap-1">
                 <a href={TEL1} className="font-semibold hover:underline">0906 321 7044</a>
-                <a href={TEL2} className="opacity-75 hover:underline">0905 593 0169</a>
               </div>
             </div>
           </div>
