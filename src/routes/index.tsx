@@ -642,7 +642,7 @@ function Index() {
                   <AccordionTrigger className="text-left text-base font-semibold">
                     <span itemProp="name">{q}</span>
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm leading-relaxed text-muted-foreground" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                  <AccordionContent forceMount className="text-sm leading-relaxed text-muted-foreground" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
                     <span itemProp="text">{a}</span>
                   </AccordionContent>
                 </AccordionItem>
