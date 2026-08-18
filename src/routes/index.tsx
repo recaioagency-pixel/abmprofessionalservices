@@ -44,7 +44,7 @@ const WA_CORPORATE = `${WA}?text=${encodeURIComponent(
   "Hello ABM Cleaning & Fumigation Services, I would like to request a corporate cleaning quotation.",
 )}`;
 const TEL1 = "tel:+2349063217044";
-const TEL2 = "tel:+2349055930169";
+
 
 const IMG = {
   fumigation: "/images/abm-fumigation-equipment.jpg",
