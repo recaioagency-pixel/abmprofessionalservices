@@ -636,18 +636,25 @@ function Index() {
         <section id="faq" className="py-20 lg:py-28">
           <div className="container-x grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHead eyebrow="FAQ" title="Frequently Asked Questions" sub="Answers to common questions about ABM's cleaning and fumigation services in Abuja." />
-            <Accordion type="single" collapsible className="w-full" itemScope itemType="https://schema.org/FAQPage">
+            <Accordion type="single" collapsible className="w-full">
               {FAQS.map(([q, a], i) => (
-                <AccordionItem key={q} value={`item-${i}`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-                  <AccordionTrigger className="text-left text-base font-semibold">
-                    <span itemProp="name">{q}</span>
-                  </AccordionTrigger>
-                  <AccordionContent forceMount className="text-sm leading-relaxed text-muted-foreground" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                    <span itemProp="text">{a}</span>
-                  </AccordionContent>
+                <AccordionItem key={q} value={`item-${i}`}>
+                  <AccordionTrigger className="text-left text-base font-semibold">{q}</AccordionTrigger>
+                  <AccordionContent className="text-sm leading-relaxed text-muted-foreground">{a}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
+            {/* Hidden FAQ schema for SEO: content is always in the DOM but visually hidden */}
+            <div className="hidden" aria-hidden="true" itemScope itemType="https://schema.org/FAQPage">
+              {FAQS.map(([q, a]) => (
+                <div key={q} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                  <h3 itemProp="name">{q}</h3>
+                  <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                    <p itemProp="text">{a}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
