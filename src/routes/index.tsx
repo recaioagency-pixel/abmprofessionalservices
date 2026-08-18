@@ -699,8 +699,6 @@ function Index() {
             <p className="text-sm text-muted-foreground">Maitama, Abuja, Nigeria</p>
             <p className="mt-2 text-sm">
               <a href={TEL1} className="font-semibold text-foreground hover:text-primary">0906 321 7044</a>
-              <span className="text-muted-foreground"> · </span>
-              <a href={TEL2} className="text-muted-foreground hover:text-primary">0905 593 0169</a>
             </p>
           </div>
           <div>
